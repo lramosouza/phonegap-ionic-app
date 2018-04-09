@@ -1,0 +1,23 @@
+<ion-view view-title="Meus Servicos">
+		
+		<div class="button-circle back-assertive" ng-click="abreModalServicos()">
+			<button class="button button-icon button-clear icon ion-edit button-light"></button>
+		</div>
+
+	<ion-content>
+		<h1>Meus Serviços</h1>
+		<ion-list can-swipe="myswipe" ng-repeat="servico in servicos ">
+
+				<h1 class="positive">{{servico.titulo}}</h1>
+				<p>{{servico.descricao}}</p>
+				<ion-option-button class="button-assertive button-info" ng-click="apagar(contato)">Apagar</ion-option-button>
+
+		</ion-list>
+		<ion-infinite-scroll
+			    ng-show="paginacao"
+			    icon="ion-loading-c"	
+			    on-infinite="loadMore()"
+			    distance="80%">
+		  </ion-infinite-scroll>
+	</ion-content>
+</ion-view>

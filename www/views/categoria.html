@@ -1,0 +1,17 @@
+<ion-view view-title="Categorias">
+		
+<ion-content>
+
+
+    <font size="5"> <center><br>Trabalhamos com as seguintes categorias de serviços: </center><br></font> 
+	 
+		<ion-list ng-repeat="categoria in categorias">
+			<div class="card">
+
+			<ion-list ng-value= "{{categoria.id}}">  
+				<a class="item item-text-wrap"><font size="5">{{categoria.titulo}}</font></a>
+			</ion-list>
+			</div>
+		</ion-list> 
+	</ion-content>
+</ion-view>

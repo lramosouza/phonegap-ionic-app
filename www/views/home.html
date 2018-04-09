@@ -1,0 +1,23 @@
+<ion-view view-title="Serviços">
+		
+		<div class="button-circle back-assertive" ng-click="abreModal()">
+			<button class="button button-icon button-clear icon ion-edit button-light"></button>
+		</div>
+
+	<ion-content>
+		<h1>Serviços</h1>
+		<ion-list can-swipe="myswipe" ng-repeat="contato in contatos ">
+			<ion-item ng-click="perfilUsuario(contato.id)">
+				<h1 class="positive">{{contato.nome}}</h1>
+				<p>{{contato.servico}}</p>  
+				<ion-option-button class="button-assertive button-info" ng-click="denunciar(contato)">Denunciar</ion-option-button>
+			</ion-item>
+		</ion-list>
+		<ion-infinite-scroll
+			    ng-show="paginacao"
+			    icon="ion-loading-c"	
+			    on-infinite="loadMore()"
+			    distance="80%"> 
+		  </ion-infinite-scroll>
+	</ion-content>
+</ion-view>

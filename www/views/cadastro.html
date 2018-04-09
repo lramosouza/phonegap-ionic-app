@@ -1,0 +1,67 @@
+<ion-modal-view>
+
+    <ion-header-bar class="bar-positive">
+
+        <h1 class="title">Modal</h1>
+
+
+        <button class="button button-clear button-icon ion-close" ng-click="fechaModal()"></button>
+
+
+    </ion-header-bar>
+
+    <ion-content>
+
+        <h2>Serviços</h2>
+        <form name="formCadastro">
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Nome</span>
+                    <input type="text" placeholder="Nome" name="nome" ng-model="cadastro.nome" ng-required="true">
+                    <span class="assertive" ng-show="formCadastro.nome.$invalid && formCadastro.nome.$dirty">Pereencha o campo nome corretamente!</span>
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Email</span>
+                    <input type="email" placeholder="Email" name="email" ng-model="cadastro.email" ng-required="true">
+                    <span class="assertive" ng-show="formCadastro.email.$invalid && formCadastro.email.$dirty">Pereencha o campo email corretamente!</span>
+
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Senha</span>
+                    <input type="password" placeholder="Senha" name="senha" ng-model="cadastro.senha" ng-required="true">
+                    <span class="assertive" ng-show="formCadastro.senha.$invalid && formCadastro.senha.$dirty">Pereencha o campo senha corretamente!</span>
+
+                </label>
+				
+				<label class="item item-input item-floating-label">
+                    <span class="input-label">Serviço</span>
+                    <input type="text" placeholder="Serviço" name="servico" ng-model="cadastro.servico" ng-required="true">
+
+                </label>
+				
+				<label class="item item-input item-floating-label">
+                    <span class="input-label">Descrição</span>
+                    <input type="text" placeholder="Descrição" name="descricaoservicos" ng-model="cadastro.descricaoservicos" ng-required="true">
+
+                </label>
+				
+				<label class="item item-input item-floating-label">
+                    <span class="input-label">Forma Pagamento</span>
+                    <input type="text" placeholder="Forma De Pagamento" name="formapagamento" ng-model="cadastro.formapagamento" ng-required="true">
+
+                </label>
+				
+				<label class="item item-input item-floating-label">
+                    <span class="input-label">Região Atendida</span>
+                    <input type="text" placeholder="Região Que Atende" name="regiaoatendida" ng-model="cadastro.regiaoatendida" ng-required="true">
+
+                </label>
+
+            </div>
+        </form>
+        <button class="button button-full button-positive" ng-disabled="formCadastro.$invalid" ng-click="cadastroUsuario(cadastro)">Divulgar meu serviço</button>
+    </ion-content>
+
+</ion-modal-view>

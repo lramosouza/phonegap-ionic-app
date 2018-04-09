@@ -1,0 +1,36 @@
+<ion-view view-title="Pesquisa">
+		
+<ion-content>
+	
+  <input type="Search" ng-model="criteria" placeholder="Do que você precisa hoje?">
+
+	<!--    <font size="5"> <center>Selecione a categoria </center><br></font> -->
+	 
+<!--		<ion-list can-swipe="myswipe" ng-repeat="categoria in categorias">
+			<ion-checkbox ng-model="isChecked">
+				
+				<h1 class="positive">{{categoria.nome}}</h1>
+				<p>{{categoria.titulo}}</p>
+		
+				</ion-checkbox> 
+		</ion-list>
+-->		<ion-list can-swipe="myswipe" ng-repeat="contato in contatos | filter: criteria">
+			<ion-item ng-click="perfilUsuario(contato.id)">
+				<h1 class="positive">{{contato.nome}}</h1>
+				<p>{{contato.servico}}</p>
+				<ion-option-button class="button-assertive button-info" ng-click="denunciar(contato)">Denunciar</ion-option-button>
+			</ion-item>
+		</ion-list>
+		<ion-infinite-scroll
+			    ng-show="paginacao"
+			    icon="ion-loading-c"	
+			    on-infinite="loadMore()"
+			    distance="80%">
+		  </ion-infinite-scroll>
+	<!--	<ion-list ng-repeat="categoria in categorias">
+			<ion-radio ng-model="choice" ng-value= "{{categoria.id}}">  
+				<a class="positive"><font size="5">{{categoria.titulo}}</font></a>
+			</ion-radio>
+		</ion-list> -->	
+	</ion-content>
+</ion-view>
